@@ -1,0 +1,39 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: rgb(240,240,240);
+	background-size: 1400px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-family: sans-serif;
+}
+
+
+.form-profile{
+
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 30px;
+	width: 500px; 
+
+}
+.form{
+	background-color: white;
+	position: absolute;
+	top: 240%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 15px;
+	width: 520px; 
+
+}
+
+.footer{
+
+	position: relative;
+	bottom: -580px;
+
+}
