@@ -1,6 +1,8 @@
 <?php 
+//ubah();
 //konek ke dbms
-	$conn = mysqli_connect("localhost", "root", "", "pi_admin");
+	//$conn = mysqli_connect("localhost", "root", "", "pi_admin");
+	$conn = mysqli_connect("localhost", "u1025002_dicko", "dicko8240", "u1025002_dick");
 	function query($query){
 		global $conn;
 		$result = mysqli_query($conn, $query);
@@ -22,8 +24,8 @@
 
 
 	function ubah($data){
+		//$data = query();
 		global $conn;
-
 		$id 		= $data["id"]; 
 		$npm 		= htmlspecialchars($data["npm"]);
 		$nama 		= htmlspecialchars($data["nama"]);
@@ -33,20 +35,18 @@
 		$persyaratanLama= htmlspecialchars($data["persyaratanLama"]);
 		$gambarLama = htmlspecialchars($data["gambarLama"]);
 
-//cek apakah user pilih gambar baru apa tidak
-		if( $_FILES['gambar']['error'] === 4){
+		
+		//cek apakah user pilih gambar baru apa tidak
+		$gambar = upload();
+		if(empty($gambar) ){
 			$gambar = $gambarLama;
-
-		} else {
-			$gambar = upload();
+			//return 0;	
 		}
 
-
-		if( $_FILES['persyaratan']['error'] === 4){
+		$persyaratan = persyaratan();
+		if(empty($persyaratan)){
 			$persyaratan = $persyaratanLama;
-
-		} else {
-			$persyaratan = persyaratan();
+			//return 0;
 		}
 
 //query ubah data

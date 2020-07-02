@@ -37,13 +37,13 @@ require '../user/function/function_upload.php';
 <!DOCTYPE html>
 <html>
 <head>
-  <title>profile</title>
+  <title>Pendaftaran</title>
 
     <?php require 'link/link.php' ?>
 
-    <link rel="stylesheet" type="text/css" href="../user/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../user/css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../user/css/cekdaftar.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/cekdaftar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>

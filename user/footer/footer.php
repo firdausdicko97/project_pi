@@ -64,7 +64,7 @@
                 </div><!--.card-->
             </div><!--.col-->
             <div class="col text-center">
-                <img src="../user/img/logoti1.png" alt="مدرسه شهدای رهپویان" class="mb-3">
+                <img src="../img/logoti1.png" alt="مدرسه شهدای رهپویان" class="mb-3">
                 <br class="clearfix">
                 <a href="https://twitter.com/ug_labti" class="snip1472"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.instagram.com/labti.ug/" class="snip1472"><i class="fab fa-instagram"></i></a>

@@ -18,20 +18,20 @@
 
     <div class="logo mx-5 ">
       <a href="http://ti.lab.gunadarma.ac.id/">
-        <img src="css/img/logoti1.png" width="30px">
+        <img src="/css/img/logoti1.png" width="30px">
       </a>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="/index.php">Beranda</a>
+          <a class="nav-link" href="user/index.php">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/daftar.php">Daftar</a>
+          <a class="nav-link" href="daftar.php">Daftar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pengumuman.php"> Pengumuman</a>
+          <a class="nav-link" href="pengumuman.php"> Pengumuman</a>
         </li>
       </ul>
       <div class="nav-item">
