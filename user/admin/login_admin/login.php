@@ -35,7 +35,7 @@ if ( isset($_SESSION["login"]) ) {
 
 			if (password_verify($password, $row["password"]) ){
 				$_SESSION["login"] = true;
-
+			$_SESSION["username"] = $_POST["username"];
 			//cek remember me
 			if( isset($_POST['remember']) ){
 			//buat cookie

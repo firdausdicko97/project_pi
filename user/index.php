@@ -25,8 +25,8 @@ if( isset($_COOKIE['id']) && isset($_COOKIE['key']) ){
 
   <?php require 'link/link.php' ?>
 
-  <link rel="stylesheet" type="text/css" href="../user/css/style.css">
-  <link rel="stylesheet" type="text/css" href="../user/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/footer.css">
 
 </head>
 

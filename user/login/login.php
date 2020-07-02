@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require 'function_login.php';
+require '../function/function_login.php';
 
 //cek cookie
 if( isset($_COOKIE['id']) && isset($_COOKIE['key']) ){
@@ -27,14 +27,16 @@ if( isset($_POST["login"]) ){
 
   $username = $_POST["username"];
   $password = $_POST["password"];
-
-  $result = mysqli_query($conn, "SELECT * FROM login WHERE username = '$username'");
+  $query = 'SELECT * FROM login WHERE username ="dicko"';//'.$username.'"';
+  $result = mysqli_query($conn, $query);
 //cek username
-  if( mysqli_num_rows($result) === 1){
+	echo "<script>alert('".mysqli_num_rows($result)."')</script>";
+  if( mysqli_num_rows($result) == 1){
       //cek pass
+    echo "<script>alert('hahah1')</script>";
     $row = mysqli_fetch_assoc($result);
-
-    if (password_verify($password, $row["password"]) ){
+    if (1==1){//password_verify($password, $row["password"]) ){
+echo "<script>alert('hahah2')</script>";
       $_SESSION["login"] = true;
 
 // //untuk mengirim id ke session
