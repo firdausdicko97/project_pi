@@ -62,7 +62,7 @@ if( isset($_COOKIE['id']) && isset($_COOKIE['key']) ){
           <span class="small text-gray">
             <i class="fa fa-clock-o" aria-hidden="true"> tanggal</i>
           </span>
-          <br>Calon asisten dapat melakukan pendaftaran dari menu "Daftar", peryaratan disatukan menjadi zip/rar dengan format <b>CALAS_NAMA_NPM</b>. Persyaratan yang harus di upload adalah
+          <br>Calon asisten dapat melakukan pendaftaran dari menu "Profile". Persyaratan yang diperlukan disatukan menjadi zip/rar dengan format <b>CALAS_NAMA_NPM</b>. Persyaratan yang harus di upload adalah
           <br>
           <ul>
             <li>Surat Lamaran</li>

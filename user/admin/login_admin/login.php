@@ -11,18 +11,18 @@ if( isset($_COOKIE['id']) && isset($_COOKIE['key']) ){
 	$row = mysqli_fetch_assoc($result);
 //cek cookie dan username
 	if ($key === hash('sha256', $row['username']) ){
-		$_SESSION['login'] = true;
+		$_SESSION['login_admin'] = true;
 	}
 }
 
-if ( isset($_SESSION["login"]) ) {
+if ( isset($_SESSION["login_admin"]) ) {
 	header("location: ../index.php");
 	exit;
 }
 
 
 //cek udah submit apa belom
-		if( isset($_POST["login"]) ){
+		if( isset($_POST["login_admin"]) ){
 
 			$username = $_POST["username"];
 			$password = $_POST["password"];
@@ -34,7 +34,7 @@ if ( isset($_SESSION["login"]) ) {
 			$row = mysqli_fetch_assoc($result);
 
 			if (password_verify($password, $row["password"]) ){
-				$_SESSION["login"] = true;
+				$_SESSION["login_admin"] = true;
 			$_SESSION["username"] = $_POST["username"];
 			//cek remember me
 			if( isset($_POST['remember']) ){
@@ -83,7 +83,7 @@ if ( isset($_SESSION["login"]) ) {
 			</div>
 
 			<div>
-				<button type="submit" name="login" class="tombol">LOGIN</button>
+				<button type="submit" name="login_admin" class="tombol">LOGIN</button>
 			</div>
 	</form>
 	</div>

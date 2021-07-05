@@ -1,7 +1,7 @@
 <?php 
 
 session_start();
-require '../user/function/function_upload.php';
+require '../user/function/function_update.php';
 
 //cek cookie
 if( isset($_COOKIE['id']) && isset($_COOKIE['key']) ){
@@ -24,6 +24,14 @@ if ( !isset($_SESSION["login"]) ){
 
 //ambil data dari session yang dikirim
 $id = query("SELECT * FROM peserta WHERE id = '" .$_SESSION["id1"]. "' ")[0];
+		if(($id == null)){
+			      echo "
+      <script>
+        alert('Anda harus daftar');
+        document.location.href = 'daftar.php';
+      </script>
+      ";
+		}
 
 //cek tombol submit dah ditekan apa belom
 if( isset($_POST["submit"]) ){
@@ -33,15 +41,15 @@ if( isset($_POST["submit"]) ){
   if ( ubah($_POST) > 0 ){
     echo "
     <script>
-    alert('Data berhasil ditambahkan');
-    document.location.href = 'index.php';
+    alert('Data berhasil diubah');
+    document.location.href = 'update.php';
     </script>
     ";
   } else {
     echo "
     <script>
-    alert('Data gagal ditambahkan');
-    document.location.href = 'index.php';
+    alert('Data gagal diubah');
+    document.location.href = 'update.php';
     </script>
     ";
   }
@@ -55,9 +63,9 @@ if( isset($_POST["submit"]) ){
 
   <?php require 'link/link.php' ?>
 
-  <link rel="stylesheet" type="text/css" href="../user/css/style.css">
-  <link rel="stylesheet" type="text/css" href="../user/css/footer.css">
-  <link rel="stylesheet" type="text/css" href="../user/css/update.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/footer.css">
+  <link rel="stylesheet" type="text/css" href="/css/update.css">
   
 </head>
 <body>
@@ -71,9 +79,10 @@ if( isset($_POST["submit"]) ){
 
 
     <div class="form-profile">
+    <div class="panel-heading">
+      <div class="panel-title"><h4 style="text-align: center; color: white;">Biodata Asisten</h4></div>
+    </div>
       <div class="form">
-        <h2 style="text-align: center;">Ubah data</h2>
-
         <table width="430">
           <tr>
             <th width="216" scope="row">Nama</th>
@@ -91,9 +100,9 @@ if( isset($_POST["submit"]) ){
                   <input type="text" name="kelas" id="kelas" value="<?= $id['kelas'] ?>"/></td>
                 </tr>
                 <tr>
-                  <th scope="row">Email</th>
-                  <td><label for="email"></label>
-                    <input type="text" name="email" id="email" value="<?= $id['email'] ?>"/></td>
+                  <th scope="row">tlp</th>
+                  <td><label for="no_tlp"></label>
+                    <input type="text" name="no_tlp" id="no_tlp" value="<?= $id['no_tlp'] ?>"/></td>
                   </tr>
                   <tr>
                     <th scope="row">Jurusan</th>
@@ -101,7 +110,7 @@ if( isset($_POST["submit"]) ){
                       <input type="text" name="jurusan" id="jurusan" value="<?= $id['jurusan'] ?>"/></td>
                     </tr>
                     <tr>
-                      <th scope="row">persyaratan</th>
+                      <th scope="row">Persyaratan <br>(max 7MB)</th>
                       <td><label for="persyaratan"></label>
                         <label><?php echo $id["persyaratan"] ?></label>
                         <div class="file">
@@ -110,7 +119,7 @@ if( isset($_POST["submit"]) ){
                       </tr>
 
                       <tr>
-                        <th scope="row">Foto</th>
+                        <th scope="row">Foto <br>(max 3MB)</th>
                         <td><label for="gambar"></label>
                           <img src="../admin/img/<?php echo $id["gambar"] ?>" width="40"><br>
                           <div>

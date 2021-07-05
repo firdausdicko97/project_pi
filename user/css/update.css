@@ -1,39 +1,41 @@
 body{
-	margin: 0;
+	
 	padding: 0;
-	background-color: rgb(240,240,240);
-	background-size: 1400px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+	position: relative;
+	padding-top: 80px;
+	padding-bottom: 10px;
+	background: url(img/pngwing2.png);
+	background-color: white;
+	background-size: 900px;
 	font-family: sans-serif;
 }
 
-
 .form-profile{
-
+	background-color: #3b5998;
 	position: absolute;
 	top: 30%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	padding: 30px;
+	padding: 21px;
 	width: 500px; 
-
+	box-shadow: 0 0 10px 5px black;
 }
 .form{
 	background-color: white;
 	position: absolute;
-	top: 240%;
+	top: 360%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	padding: 15px;
-	width: 520px; 
-
+	padding: 20px;
+	width: 500px; 
+	box-shadow: 0 0 10px 5px black;
 }
 
 .footer{
 
 	position: relative;
-	bottom: -580px;
+	bottom: -530px;
 
 }
+
+

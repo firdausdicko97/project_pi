@@ -28,7 +28,7 @@
           <a class="nav-link" href="/index.php">Beranda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/daftar.php">Daftar</a>
+          <a class="nav-link" href="/daftar.php">Profile</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pengumuman.php"> Pengumuman</a>

@@ -37,13 +37,16 @@
 
 		
 		//cek apakah user pilih gambar baru apa tidak
-		$gambar = upload();
-		if(empty($gambar) ){
+		if(isset($_FILES['gambar'])){
+			$gambar = upload();
+		}
+		if(empty($gambar)){
 			$gambar = $gambarLama;
 			//return 0;	
 		}
-
-		$persyaratan = persyaratan();
+		if(isset($_FILES['persyaratan'])){
+			$persyaratan = persyaratan();
+		}
 		if(empty($persyaratan)){
 			$persyaratan = $persyaratanLama;
 			//return 0;
@@ -89,10 +92,7 @@
 		$tmpName = $_FILES['gambar']['tmp_name'];
 
 //cek gamabr di upload apa ga
-		if( $error === 4){
-			echo "<script>
-					alert('pilih gambar dulu!');
-				</script>";
+		if($error == 4){
 			return false;
 		}
 
@@ -134,12 +134,15 @@
 		$tmpName = $_FILES['persyaratan']['tmp_name'];
 
 //cek gamabr di upload apa ga
-		if( $error === 4){
+		if($error==4){
+			return false;
+		}
+/*		if( $error === 4){
 			echo "<script>
 					alert('pilih File dulu!');
 				</script>";
 			return false;
-		}
+		}*/
 
 //cek apakah yang di upload itu gambar
 		$ekstensiPersyaratanValid = ['zip','rar'];

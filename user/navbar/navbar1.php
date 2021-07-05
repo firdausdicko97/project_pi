@@ -28,11 +28,8 @@
               <a class="nav-link" href="/index.php">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/navbar/alert.php">Daftar</a>
+              <a class="nav-link" href="/register/register.php">Daftar</a>
             </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/navbar/alert.php"> Pengumuman</a>
-          </li>
           </ul>
           <div class="nav-item">
             <a class="login" href="/login/login.php">Login</a>

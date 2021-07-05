@@ -2,7 +2,7 @@
 
 session_start();
 //cek user dah login apa belom
-if ( !isset($_SESSION["login"]) ){
+if ( !isset($_SESSION["login_admin"]) ){
 	header("location: ../admin/login/login.php");
 	exit;
 }

@@ -9,7 +9,16 @@ if ( !isset($_SESSION["login"]) ){
 
 require '../user/function/function_upload.php';
 
-// $id = query("SELECT * FROM peserta WHERE id = '" .$_SESSION["id1"]. "' ");
+$id = query("SELECT * FROM peserta WHERE id = '" .$_SESSION["id1"]. "' ");
+
+		if(!($id == null)){
+			      echo "
+      <script>
+        alert('Update data diri');
+        document.location.href = 'update.php';
+      </script>
+      ";
+		}
 
 //cek tombol submit dah ditekan apa belom
   if( isset($_POST["submit"]) ){
@@ -20,7 +29,7 @@ require '../user/function/function_upload.php';
     echo "
       <script>
         alert('Data berhasil ditambahkan');
-        document.location.href = 'index.php';
+        document.location.href = 'update.php';
       </script>
       ";
     } else {
@@ -31,6 +40,7 @@ require '../user/function/function_upload.php';
       </script>
       ";
     }
+
   }
  ?>
 
@@ -52,7 +62,7 @@ require '../user/function/function_upload.php';
   <?php require '../user/navbar/navbar.php'; ?>
 
   <form action="" method="post" enctype="multipart/form-data">
-  <input type="hidden" name="id" value="<?php echo $id["id"] ?>">
+  
 
   <div class="form-profile">
     <div class="panel-heading">
@@ -60,6 +70,7 @@ require '../user/function/function_upload.php';
     </div>
     <div class="form">
     <table width="430">
+        <input type="hidden" name="id" id="id" value="<?php echo $_SESSION["id1"] ?>"/>
         <tr>
           <th width="216" scope="row">Nama</th>
           <td width="200"><label for="nama"></label>
@@ -86,7 +97,7 @@ require '../user/function/function_upload.php';
           <input type="text" name="jurusan" id="jurusan" /></td>
         </tr>
         <tr>
-          <th scope="row">persyaratan</th>
+          <th scope="row">Persyaratan <br>(max 7MB)</th>
           <td><label for="persyaratan"></label>
 
           <div class="file">
@@ -95,7 +106,7 @@ require '../user/function/function_upload.php';
 
         </tr>
          <tr>
-          <th scope="row">Foto</th>
+          <th scope="row">Foto <br>(max 3MB)</th>
           <td><label for="gambar"></label>
 
           <div>

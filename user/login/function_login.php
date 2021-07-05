@@ -1,6 +1,7 @@
 <?php 
 //konek ke dbms
-	$conn = mysqli_connect("localhost", "root", "", "pi_user");
+//	$conn = mysqli_connect("localhost", "root", "", "pi_user");
+	$conn = mysqli_connect("localhost", "u1025002_dicko", "dicko8240", "u1025002_dick");
 	function query($query){
 		global $conn;
 		$result = mysqli_query($conn, $query);

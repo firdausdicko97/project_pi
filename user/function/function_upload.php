@@ -15,6 +15,7 @@
 	function tambah($data){
 //ambil datda dari tiap elemen
 		global $conn;
+		$id 		= htmlspecialchars($data["id"]);
 		$npm 		= htmlspecialchars($data["npm"]);
 		$nama 		= htmlspecialchars($data["nama"]);
 
@@ -45,7 +46,7 @@
 		}
 
 //query insert data
-		$query = "INSERT INTO peserta VALUES('', '$nama', '$npm', '$kelas', '$no_tlp', '$jurusan','$persyaratan','$gambar')";
+		$query = "INSERT INTO peserta VALUES('$id', '$nama', '$npm', '$kelas', '$no_tlp', '$jurusan','$persyaratan','$gambar') ";
 		mysqli_query($conn, $query);
 
 		return mysqli_affected_rows($conn);
@@ -90,7 +91,7 @@
 		$namaFileBaru .= $ekstensiGambar;
 
 //lolos pengecekan
-		move_uploaded_file($tmpName, '../admin/img/' . $namaFileBaru);
+		move_uploaded_file($tmpName, 'admin/img/' . $namaFileBaru);
 		return $namaFileBaru;
 	}
 
@@ -178,7 +179,7 @@
 		$namaFileKecil = strtolower($namaFile);
 
 //lolos pengecekan
-		move_uploaded_file($tmpName, '../admin/file/' . $namaFileKecil);
+		move_uploaded_file($tmpName, 'admin/file/' . $namaFileKecil);
 		return $namaFileKecil;
 	}
 

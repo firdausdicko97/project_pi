@@ -102,7 +102,7 @@
      <tr>
        <td>Ruang</td>
        <td>:</td>
-       <td>Kampus E522</td>
+       <td>Kampus J2125</td>
      </tr>
 
    </tbody>

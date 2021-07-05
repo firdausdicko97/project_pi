@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require '../function/function_login.php';
+require 'function_login.php';
 
 //cek cookie
 if( isset($_COOKIE['id']) && isset($_COOKIE['key']) ){
@@ -26,23 +26,26 @@ if ( isset($_SESSION["login"]) ) {
 if( isset($_POST["login"]) ){
 
   $username = $_POST["username"];
-  $password = $_POST["password"];
-  $query = 'SELECT * FROM login WHERE username ="dicko"';//'.$username.'"';
+  $password = $_POST['password'];
+  $query = "SELECT * FROM login WHERE username = '$username' ";
   $result = mysqli_query($conn, $query);
 //cek username
-	echo "<script>alert('".mysqli_num_rows($result)."')</script>";
   if( mysqli_num_rows($result) == 1){
       //cek pass
-    echo "<script>alert('hahah1')</script>";
     $row = mysqli_fetch_assoc($result);
-    if (1==1){//password_verify($password, $row["password"]) ){
-echo "<script>alert('hahah2')</script>";
+    if (password_verify($password, $row["password"]) ){
       $_SESSION["login"] = true;
 
 // //untuk mengirim id ke session
-//       while ($row) {
-//         $_SESSION["id1"] = $row['id'];
-//       }
+       while ($row) {
+         $_SESSION["id1"] = $row['id'];
+    echo "
+      <script>
+        alert('Selamat Datang');
+        document.location.href = '../index.php';
+      </script>
+      ";
+       }
 
 //cek remember me
       // if( isset($_POST['remember']) ){
@@ -65,7 +68,7 @@ echo "<script>alert('hahah2')</script>";
 <html>
 <head>
 
-	<title>Animated Login Form</title>
+	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
@@ -104,7 +107,7 @@ echo "<script>alert('hahah2')</script>";
             <input type="password" class="input" name="password" id="password" placeholder="password" required>
           </div>
         </div>
-        <a href="../register/register.php">Registrasi</a>
+          <a href="../index.php">Kembali</a>
         <div class="error">
           <?php if ( isset($error)) : ?>
             <p style="color: red; font-style: italic;">Username atau password salah</p>

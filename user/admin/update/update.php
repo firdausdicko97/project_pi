@@ -2,7 +2,7 @@
 
 session_start();
 //cek user dah login apa belom
-if ( !isset($_SESSION["login"]) ){
+if ( !isset($_SESSION["login_admin"]) ){
 	header("location: login_admin/login.php");
 	exit;
 }
@@ -88,13 +88,13 @@ require '../function/function_edit.php';
 		          <td><label for="persyaratan"></label>
 		          <a href="../file/<?php echo $mhs["persyaratan"] ?>" hidden=""></a>
 		          <label><?php echo $mhs["persyaratan"] ?></label>
-		          <input type="file" name="persyaratan" id="persyaratan " value="<?php echo $mhs["persyaratan"] ?>" /></td>
+		          <input type="file" name="persyaratan" id="persyaratan" /></td>
 		        </tr>
 		      <tr>
 		          <th scope="row">Gambar</th>
 		          <td><label for="gambar"></label>
 		          	<img src="../img/<?php echo $mhs["gambar"] ?>" width="60"><br>
-		          <input type="file" name="gambar" id="gambar" value="<?php echo $mhs["gambar"] ?>" /></td>
+		          <input type="file" name="gambar" id="gambar" /></td>
 		        </tr>
 		      </table>
 		      <br>
